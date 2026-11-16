@@ -1,0 +1,149 @@
+/* Scroll Smart - stiluri */
+:root {
+    --navy: #17365D;
+    --mint: #66D9B5;
+    --text: #252525;
+    --muted: #5d6875;
+    --background: #f4f8fb;
+    --white: #ffffff;
+    --correct: #16794b;
+    --wrong: #b42318;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    color: var(--navy);
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+.logo span { color: #269b7a; }
+.tag { color: var(--muted); font-size: .9rem; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 20px 24px 70px; }
+
+.intro {
+    padding: 64px 48px;
+    border-radius: 26px;
+    background: var(--navy);
+    color: var(--white);
+    overflow: hidden;
+}
+
+.eyebrow {
+    color: #269b7a;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .76rem;
+    font-weight: 800;
+}
+.intro .eyebrow { color: var(--mint); }
+
+h1, h2, h3 {
+    font-family: "Trebuchet MS", sans-serif;
+    line-height: 1.2;
+}
+h1 { font-size: clamp(2.2rem, 5vw, 4rem); margin: 12px 0 18px; }
+h1 span { color: var(--mint); }
+.lead { max-width: 690px; color: #e6edf5; font-size: 1.08rem; margin-bottom: 28px; }
+
+.button {
+    display: inline-block;
+    border: 0;
+    border-radius: 999px;
+    padding: 13px 22px;
+    background: var(--mint);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: .98rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .15s ease, filter .15s ease;
+}
+.button:hover { transform: translateY(-2px); filter: brightness(.97); }
+.button:focus-visible, .answer:focus-visible { outline: 3px solid #f0b429; outline-offset: 3px; }
+.button-secondary { background: var(--navy); color: white; margin-top: 14px; }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 28px 0 64px;
+}
+.card {
+    background: var(--white);
+    border: 1px solid #e3eaf0;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(23, 54, 93, .05);
+}
+.card-icon { font-size: 1.8rem; }
+.card h2 { color: var(--navy); font-size: 1.25rem; }
+.card p { color: var(--muted); margin-bottom: 0; }
+
+.quiz-section { max-width: 760px; margin: 0 auto; }
+.quiz-heading { text-align: center; margin-bottom: 22px; }
+.quiz-heading h2 { color: var(--navy); font-size: 2rem; margin: 8px 0; }
+.quiz-heading p:last-child { color: var(--muted); }
+
+.quiz-box {
+    background: var(--white);
+    border: 1px solid #e3eaf0;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 12px 32px rgba(23, 54, 93, .08);
+}
+.quiz-top { display: flex; justify-content: space-between; color: var(--muted); font-size: .92rem; }
+.score strong { color: var(--navy); }
+.quiz-box h3 { color: var(--navy); font-size: 1.35rem; margin: 28px 0 18px; }
+.answers { display: grid; gap: 12px; }
+.answer {
+    width: 100%;
+    text-align: left;
+    border: 2px solid #dce5ec;
+    border-radius: 12px;
+    padding: 14px 16px;
+    background: white;
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+}
+.answer:hover:not(:disabled) { border-color: var(--mint); background: #f3fffb; }
+.answer:disabled { cursor: default; opacity: .9; }
+.answer.correct { border-color: var(--correct); background: #eaf8f0; }
+.answer.wrong { border-color: var(--wrong); background: #fff0ef; }
+.message { min-height: 28px; font-weight: 700; }
+.message.good { color: var(--correct); }
+.message.bad { color: var(--wrong); }
+.result { margin-top: 18px; padding: 16px; background: #eefaf5; border-radius: 12px; color: var(--navy); font-weight: 700; }
+
+footer { text-align: center; padding: 26px 20px; color: var(--muted); font-size: .88rem; }
+footer p { margin: 5px; }
+
+@media (max-width: 760px) {
+    .cards { grid-template-columns: 1fr; }
+    .intro { padding: 42px 26px; }
+    .nav { align-items: flex-start; flex-direction: column; }
+    .quiz-box { padding: 22px 18px; }
+}
