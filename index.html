@@ -1,76 +1,123 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scroll Smart</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Scroll Smart - quiz educativ despre efectele videoclipurilor scurte asupra atenției și concentrării.">
+  <title>Scroll Smart | Ai controlul asupra scroll-ului</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="hero">
-        <nav class="nav">
-            <span class="logo">Scroll<span>Smart</span></span>
-            <span class="tag">Folosește tehnologia cu măsură</span>
-        </nav>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Scroll Smart - pagina principală">
+      <span class="brand-mark">S</span>
+      <span>SCROLL<span class="brand-light">SMART</span></span>
+    </a>
+    <span class="top-tag"><span class="live-dot"></span> ÎNVAȚĂ SĂ ALEGI</span>
+  </header>
 
-        <main class="container">
-            <section class="intro">
-                <p class="eyebrow">Învață să-ți protejezi atenția</p>
-                <h1>Tu controlezi scroll-ul,<br><span>nu scroll-ul pe tine.</span></h1>
-                <p class="lead">
-                    Videoclipurile scurte sunt distractive, dar prea mult timp petrecut
-                    derulând poate afecta atenția, concentrarea și timpul dedicat altor activități.
-                    Descoperă câteva obiceiuri digitale mai sănătoase!
-                </p>
-                <a class="button" href="#invata">Descoperă recomandările</a>
-            </section>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">MAI MULT CONTROL. MAI PUȚIN SCROLL.</p>
+        <h1>Tu controlezi<br><span>scroll-ul.</span></h1>
+        <p class="hero-text">Videoclipurile scurte sunt distractive, dar prea mult scroll îți poate fragmenta atenția. Testează-ți cunoștințele și descoperă obiceiuri digitale mai sănătoase.</p>
+        <a class="hero-link" href="#quiz">Începe provocarea <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="Ilustrație decorativă cu telefon și notificări">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="phone">
+          <div class="phone-speaker"></div>
+          <div class="phone-screen">
+            <div class="screen-top"><span>9:41</span><span>● ● ●</span></div>
+            <div class="video-card">
+              <span class="play-icon">▶</span>
+              <span class="video-label">CLIP #01</span>
+            </div>
+            <div class="screen-lines"><i></i><i></i><i></i></div>
+            <div class="screen-nav"><b></b><b></b><b></b></div>
+          </div>
+        </div>
+        <span class="float-chip chip-one">⏱ Timpul tău contează</span>
+        <span class="float-chip chip-two">✦ Fii atent</span>
+      </div>
+    </section>
 
-            <section class="cards" id="invata">
-                <article class="card">
-                    <div class="card-icon">⏱</div>
-                    <h2>Stabilește o limită</h2>
-                    <p>Alege dinainte cât timp petreci pe aplicațiile cu videoclipuri scurte și încearcă să respecți limita.</p>
-                </article>
-                <article class="card">
-                    <div class="card-icon">🔕</div>
-                    <h2>Oprește notificările</h2>
-                    <p>Dezactivează notificările care te întrerup și verifică telefonul în momentele potrivite.</p>
-                </article>
-                <article class="card">
-                    <div class="card-icon">🌿</div>
-                    <h2>Ia pauze regulate</h2>
-                    <p>Lasă telefonul deoparte, mișcă-te, citește sau petrece timp cu familia și prietenii.</p>
-                </article>
-            </section>
+    <section class="facts" aria-label="Idei importante">
+      <article class="fact-card">
+        <span class="fact-number">01</span>
+        <h2>Atenția are nevoie de pauze</h2>
+        <p>Schimbarea rapidă a clipurilor poate face mai dificilă concentrarea asupra unei singure activități.</p>
+      </article>
+      <article class="fact-card">
+        <span class="fact-number">02</span>
+        <h2>Notificările te pot întrerupe</h2>
+        <p>Fiecare verificare a telefonului îți poate întrerupe ritmul de învățare.</p>
+      </article>
+      <article class="fact-card">
+        <span class="fact-number">03</span>
+        <h2>Tu poți decide</h2>
+        <p>Limitele de timp, pauzele și notificările oprite te ajută să folosești tehnologia echilibrat.</p>
+      </article>
+    </section>
 
-            <section class="quiz-section" id="quiz">
-                <div class="quiz-heading">
-                    <p class="eyebrow">Verifică ce ai învățat</p>
-                    <h2>Mini-quiz Scroll Smart</h2>
-                    <p>Răspunde la întrebare și primești feedback imediat.</p>
-                </div>
+    <section class="quiz-section" id="quiz">
+      <div class="section-heading">
+        <p class="eyebrow">PROVOCAREA SCROLL SMART</p>
+        <h2>Verifică ce ai învățat.</h2>
+        <p>5 întrebări. 15 secunde pentru fiecare. Fiecare răspuns corect valorează 10 puncte.</p>
+      </div>
 
-                <div class="quiz-box">
-                    <div class="quiz-top">
-                        <span id="progres">Întrebarea 1 din 1</span>
-                        <span class="score">Scor: <strong id="scor">0</strong></span>
-                    </div>
-                    <h3 id="intrebare"></h3>
-                    <div id="raspunsuri" class="answers"></div>
-                    <p id="mesaj" class="message" aria-live="polite"></p>
-                    <button id="urmator" class="button" type="button" hidden>Vezi rezultatul</button>
-                    <div id="rezultat" class="result" hidden></div>
-                    <button id="reia" class="button button-secondary" type="button" hidden>Reia quizul</button>
-                </div>
-            </section>
-        </main>
+      <div class="quiz-card">
+        <div class="quiz-topline">
+          <span id="question-counter">ÎNTREBAREA 1 / 5</span>
+          <span class="score-pill">SCOR <strong id="score">0</strong></span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-label="Progresul quizului" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
 
-        <footer>
-            <p>Scroll Smart · Proiect educațional despre obiceiuri digitale sănătoase</p>
-            <p>Aplicație realizată de un elev al clasei a XI-a C, cu ajutorul AI.</p>
-        </footer>
-    </header>
+        <div class="timer-row">
+          <span class="timer-caption">TIMP RĂMAS</span>
+          <span class="timer" id="timer" aria-live="off">15s</span>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="question-area">
+          <p class="question-kicker" id="question-kicker">GÂNDEȘTE ÎNAINTE SĂ ALEGI</p>
+          <h3 id="question">Care dintre următoarele obiceiuri ajută la protejarea atenției și concentrării?</h3>
+          <div class="answers" id="answers">
+            <button class="answer-btn" data-answer="0"><span class="answer-letter">A</span><span>Să urmărești videoclipuri scurte timp de mai multe ore.</span></button>
+            <button class="answer-btn" data-answer="1"><span class="answer-letter">B</span><span>Să iei pauze de la telefon și să limitezi timpul petrecut pe rețelele sociale.</span></button>
+            <button class="answer-btn" data-answer="2"><span class="answer-letter">C</span><span>Să verifici telefonul la fiecare notificare.</span></button>
+          </div>
+          <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+          <button class="next-btn" id="next-btn" hidden>Următoarea întrebare <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+
+      <div class="quiz-note"><span>✦</span> Nu te grăbi. Citește cu atenție și alege răspunsul care te ajută să-ți păstrezi concentrarea.</div>
+    </section>
+
+    <section class="tips">
+      <div>
+        <p class="eyebrow">MICRO-OBICEIURI, MARE DIFERENȚĂ</p>
+        <h2>Folosește tehnologia.<br><span>Nu o lăsa să te folosească.</span></h2>
+      </div>
+      <ul>
+        <li><span>01</span> Stabilește o limită zilnică pentru aplicațiile video.</li>
+        <li><span>02</span> Pune telefonul deoparte când înveți.</li>
+        <li><span>03</span> Oprește notificările care nu sunt importante.</li>
+        <li><span>04</span> Ia pauze și petrece timp și fără ecran.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#"><span class="brand-mark">S</span><span>SCROLL<span class="brand-light">SMART</span></span></a>
+    <p>Un proiect educativ despre atenție, concentrare și echilibru digital.</p>
+    <span>© 2026 SCROLL SMART</span>
+  </footer>
 </body>
 </html>
